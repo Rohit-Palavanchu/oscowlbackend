@@ -1,0 +1,82 @@
+### Test Registration (POST /todo/register)
+POST http://localhost:3000/todo/register
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword123",
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+
+###
+
+### Test Login (POST /todo/login)
+POST http://localhost:3000/todo/login
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword123"
+}
+
+###
+
+GET http://localhost:3000/todo/todos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZWU5OWEyLTUwMTQtNDFkNy1iZTBjLTcxZmUzMmJjZDI1NSIsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3MzE0OTEzNjgsImV4cCI6MTczMTQ5NDk2OH0.V0C_GGgzjxNQRq8lDt9D1B0njnhKbvdNpN-A0b_6MbI
+
+### Test Profile Update (PUT /todo/profile)
+PUT http://localhost:3000/todo/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjZDJlZWU0LTU0NjMtNDk3Ni1iYmU4LWE1MWRlZDk0YzE5NyIsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3MzE0Nzg5NDIsImV4cCI6MTczMTQ4MjU0Mn0.dM4pPPbuzYGtdmuu4RaomdEBkzBaZhtioNgC84GCRps
+Content-Type: application/json
+
+{
+  "name": "Updated Name",
+  "email": "updatedemail@example.com"
+}
+
+###
+
+### Test Task Creation (POST /todo/todo)
+POST http://localhost:3000/todo/todo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjZDJlZWU0LTU0NjMtNDk3Ni1iYmU4LWE1MWRlZDk0YzE5NyIsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3MzE0Nzg5NDIsImV4cCI6MTczMTQ4MjU0Mn0.dM4pPPbuzYGtdmuu4RaomdEBkzBaZhtioNgC84GCRps
+Content-Type: application/json
+
+{
+  "title": "Sample Task",
+  "description": "This is a sample task description.",
+  "status": "pending"
+}
+
+###
+
+### Test Update Task Status (PUT /todo/todo/:id/status)
+PUT http://localhost:3000/todo/todo/777ed520-8e72-4701-9984-79b0af02a618/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjZDJlZWU0LTU0NjMtNDk3Ni1iYmU4LWE1MWRlZDk0YzE5NyIsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3MzE0Nzg5NDIsImV4cCI6MTczMTQ4MjU0Mn0.dM4pPPbuzYGtdmuu4RaomdEBkzBaZhtioNgC84GCRps
+Content-Type: application/json
+
+{
+  "status": "in progress"
+}
+
+###
+
+### Test Update Task (PUT /todo/todo/:id)
+PUT http://localhost:3000/todo/todo/777ed520-8e72-4701-9984-79b0af02a618
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjZDJlZWU0LTU0NjMtNDk3Ni1iYmU4LWE1MWRlZDk0YzE5NyIsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3MzE0Nzg5NDIsImV4cCI6MTczMTQ4MjU0Mn0.dM4pPPbuzYGtdmuu4RaomdEBkzBaZhtioNgC84GCRps
+Content-Type: application/json
+
+{
+  "title": "Updated Task Title",
+  "description": "Updated task description.",
+  "status": "completed"
+}
+
+###
+
+### Test Delete Task (DELETE /todo/todo/:id)
+DELETE http://localhost:3000/todo/todo/10
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNjZDJlZWU0LTU0NjMtNDk3Ni1iYmU4LWE1MWRlZDk0YzE5NyIsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE3MzE0Nzg5NDIsImV4cCI6MTczMTQ4MjU0Mn0.dM4pPPbuzYGtdmuu4RaomdEBkzBaZhtioNgC84GCRps
+
+
+###
